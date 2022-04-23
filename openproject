@@ -1,0 +1,10 @@
+#!/bin/bash
+
+projectsFile=${HOME}"/dev/utilities/commands/projects.json"
+readarray -t projects < <(awk -F\" 'NF>=3 {print $4}' ${projectsFile})
+
+if [ -n $1 ]; then
+        path=${projects[$1]//[~]/${HOME}}
+        eval cd ${path};
+        exec /bin/zsh;
+fi
