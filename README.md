@@ -3,6 +3,11 @@ This repository contains some scripts that I have created to help me in my devel
 
 ## openproject
 This script is used to open a project, wherever I am. Just edit ``projectsFile`` var to link to a json file containing your projects.
+⚠️ It needs ``jq`` to be installed ! 
+```bash
+$ sudo apt-get update && sudo apt-get install jq
+```
+
 ```json
 {
   "portfolio": "~/dev/portfolio",
