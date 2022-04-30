@@ -5,7 +5,7 @@ This repository contains some scripts that I have created to help me in my devel
 This script is used to open a project, wherever I am. Just edit ``projectsFile`` var to link to a json file containing your projects.
 ⚠️ It needs ``jq`` to be installed ! 
 ```bash
-$ sudo apt-get update && sudo apt-get install jq
+sudo apt-get update && sudo apt-get install jq
 ```
 
 ```json
@@ -17,6 +17,17 @@ $ sudo apt-get update && sudo apt-get install jq
 
 Simply run 
 ```bash
-$ openproject portfolio
+openproject portfolio
 ```
 to be redirected to ``~/dev/portfolio``
+
+
+## up and down
+Theses scripts are shortcuts for commands 
+```bash
+docker-compose up -d
+docker-compose down
+```
+
+Simply run ``up`` or ``down`` to run the corresponding command.
+If there is not any ``docker-compose.yml`` file in the current directory, the script will just abort.
