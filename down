@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -f "./docker-compose.yml" ]; then
+    docker-compose down 
+else
+    echo Not any docker-compose file found, aborting
+    exit
+fi
