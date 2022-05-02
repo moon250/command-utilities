@@ -8,8 +8,15 @@ do
     projects[$key]="$value"
 done < <(jq -r "to_entries|map(\"\(.key)=\(.value)\")|.[]" ${projectsFile})
 
-if [ -n $1 ]; then
-        path=${projects[$1]//[~]/${HOME}}
+if [ $# -eq 0 ]; then
+	echo List of projects available:
+	for project in "${!projects[@]}"; do
+		echo $project: ${projects[$project]};
+	done;
+elif [[ -n ${projects[$1]} ]]; then	
+	path=${projects[$1]//[~]/${HOME}}
         eval cd ${path}
-        exec /bin/zsh
+	exec /bin/zsh;
+else
+	echo Unknown project
 fi
