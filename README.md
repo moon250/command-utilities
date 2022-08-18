@@ -22,12 +22,13 @@ openproject portfolio
 to be redirected to ``~/dev/portfolio``
 
 
-## up and down
+## up, down and restart
 Theses scripts are shortcuts for commands 
 ```bash
 docker-compose up -d
 docker-compose down
 ```
-
 Simply run ``up`` or ``down`` to run the corresponding command.
 If there is not any ``docker-compose.yml`` file in the current directory, the script will just abort.
+
+Restart uses both ``down`` and ``up`` to fully recreate compose containers.
