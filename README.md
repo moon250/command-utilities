@@ -22,8 +22,16 @@ openproject portfolio
 to be redirected to ``~/dev/portfolio``
 
 
+## createproject
+This tool creates a project directory and includes the project in ``projects.json``.
+To use it, build it using go
+⚠️ Make sure to change ``prefix`` var in ``createproject.go`` according to your system
+```shell
+go build -o createproject ./createproject.go
+```
+
 ## up, down and restart
-Theses scripts are shortcuts for commands 
+These scripts are shortcuts for commands 
 ```bash
 docker-compose up -d
 docker-compose down
