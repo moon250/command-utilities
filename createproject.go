@@ -35,10 +35,16 @@ func main() {
 
 	projects[name] = prefix + name
 
-	err = os.MkdirAll(prefix+name, 0o755)
+	if _, err := os.Stat("./conf/app.ini"); err != nil {
+	    if os.IsNotExist(err) {
+        	err = os.MkdirAll(prefix+name, 0o755)
 
-	if err != nil {
-		log.Fatal(err.Error())
+		if err != nil {
+			log.Fatal(err.Error())
+		}
+    	    } else {
+	        // other error
+    	    }
 	}
 
 	data, err = json.Marshal(projects)
